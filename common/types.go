@@ -480,9 +480,8 @@ func (d *Decimal) UnmarshalJSON(input []byte) error {
 	if i, err := strconv.ParseUint(string(input[1:len(input)-1]), 10, 64); err == nil {
 		*d = Decimal(i)
 		return nil
-	} else {
-		return err
 	}
+	return err
 }
 
 type PrettyBytes []byte
